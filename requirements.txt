@@ -1,6 +1,5 @@
 fastapi
 uvicorn[standard]
 groq
-pydantic==2.5.3
-pydantic-core==2.14.6
+pydantic
 python-multipart
