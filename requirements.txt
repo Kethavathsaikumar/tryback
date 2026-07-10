@@ -5,3 +5,9 @@ sqlalchemy
 pymysql
 python-dotenv
 groq
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pymysql
+python-multipart
