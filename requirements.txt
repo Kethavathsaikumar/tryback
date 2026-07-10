@@ -2,6 +2,6 @@ fastapi
 uvicorn[standard]
 pydantic
 sqlalchemy
-psycopg2-binary
+pymysql
 python-dotenv
 groq
