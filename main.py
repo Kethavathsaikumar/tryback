@@ -6,11 +6,12 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 import os
 from datetime import datetime
 
-# 1. DATABASE SETUP - Use Render Postgres
+# 1. DATABASE SETUP - Use Render MySQL
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise Exception("DATABASE_URL not found. Add it in Render Environment Variables")
 
+# For MySQL you need pymysql
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
@@ -50,7 +51,6 @@ def root():
 def extract_notes(req: NotesRequest):
     db = SessionLocal()
     try:
-        # Replace this with your actual AI extraction logic
         extracted = f"Extracted from: {req.notes}"
         
         new_interaction = Interaction(
